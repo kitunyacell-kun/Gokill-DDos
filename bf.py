@@ -18,7 +18,9 @@ import socks
 attemps = 0
 os.system("clear")
 print("""
-print("
+print("╭───╮
+print("╭─╮
+print("│ │   │ │
 print(f"\033[97m╔{'═' * 50}╗")
 print(f"\033[97m║\033[100m{' ' * 4}ZBlack313{' ' * 36} \033[0m║")
 print(f"\033[97m║\033[100m{' ' * 4}Black Army Community {' ' *15} \033[0m║")
