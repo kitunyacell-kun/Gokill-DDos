@@ -9,10 +9,39 @@ import socket
 import queue
 import logging
 import time
+import os
 from concurrent.futures import ThreadPoolExecutor
 from typing import Optional, List, Tuple, Dict, NamedTuple
 from urllib.parse import urlparse, ParseResult
 import socks
+
+attemps = 0
+os.system("clear")
+print("""
+  \033[38;5;220m                                  ╭───╮\033[38;5;206m                ╭───╮
+  \033[33m                      ╭───╮\033[38;5;220m       │   │\033[38;5;206m                │   │
+  \033[95m╭───╮    ╭───╮\033[33m        │   │\033[38;5;220m       │   │\033[38;5;206m                │   │
+  \033[95m│   │╭──╮│   │\033[36m─────────╮\033[33m  ╰───────╮\033[38;5;220m   │\033[37m─────────╮\033[32m─────────╮\033[38;5;206m│   ╭───╮ 
+  \033[95m│   ││  ││   │\033[36m ╭───╮   │\033[33m          │\033[38;5;220m   │\033[37m         │\033[32m         │\033[38;5;206m│ ╭─╯ ╭─╯
+  \033[95m│   ││  ││   │\033[36m │   │   │\033[33m  ╭───╮   │\033[38;5;220m   │\033[37m ╭───╮   │\033[32m ╭───────╯\033[38;5;206m╰─╯   │
+  \033[95m│   ││  ││   │\033[36m ╰───╯   │\033[33m  │   │   │\033[38;5;220m   │\033[37m │   │   │\033[32m │\033[38;5;206m    │       ╭─╯
+  \033[95m│   ╰╯  ╰╯   │\033[36m ╭───╭───╮\033[33m  │   │   │\033[38;5;220m   │\033[37m │   │   │\033[32m │\033[38;5;206m    │   ╭╮  ╰─╮
+  \033[95m│     ╭─╮    │\033[36m ╰───╯   │\033[33m  ╰───╯   │\033[38;5;220m   │\033[37m ╰───╯   │\033[32m ╰───────╮\033[38;5;206m│╰─╮  ╰╮
+  \033[95m╰─────╯ ╰────╯\033[36m─────────╯\033[33m──────────╯\033[38;5;220m───╯\033[37m─────────╯\033[32m─────────╯\033[38;5;206m╯  ╰───╯""")
+
+while attemps < 100:
+    print("\033[38;5;6m┏━━KunFayz━━⬣")
+    username = input("\033[38;5;6m┗> Enter Username: \033[33m")
+    password = input("\033[38;5;6m┗> Enter password: \033[30m")
+
+    if username == 'blackarmy' and password == 'agent':
+        print("\033[100m \033[31m••> BURNING WEBS 210πiS \033[0m")
+        break
+    else:
+        print('Incorrect credentials. Check if you have Caps lock on and try again.')
+        attemps += 1
+        continue
+    
 
 CONNECT_TIMEOUT = 10
 READ_WRITE_TIMEOUT = 15
