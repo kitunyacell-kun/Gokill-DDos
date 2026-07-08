@@ -31,15 +31,15 @@ print("""
 \033[48;5;7m║               \033[0m\033[31m╚══╝    ╚══╝ ╚══╝\033[38;5;220m ╚══╝ ╚══╝\033[0m
 """)
 print(f"\033[97m╔{'═' * 50}╗")
-print(f"\033[97m║\033[100m{' ' * 4}ZBlack313{' ' * 36} \033[0m║")
-print(f"\033[97m║\033[100m{' ' * 4}Black Army Community {' ' *15} \033[0m║")
+print(f"\033[97m║\033[100m{' ' * 4}C@nallkun{' ' * 36} \033[0m║")
+print(f"\033[97m║\033[100m{' ' * 4}Black Army Community {' ' *25} \033[0m║")
 print(f"\033[97m╚{'═' * 50}╝")
 while attemps < 100:
     print("\033[38;5;6m┏━━KunFayz━━⬣")
     username = input("\033[38;5;6m┗> Enter Username: \033[33m")
     password = input("\033[38;5;6m┗> Enter password: \033[30m")
 
-    if username == 'blackarmy' and password == 'agent':
+    if username == 'z' and password == 'black':
         print("\033[100m \033[31m••> BURNING WEBS 210πiS \033[0m")
         break
     else:
