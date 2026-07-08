@@ -32,7 +32,7 @@ print("""
 """)
 print(f"\033[97m╔{'═' * 56}╗")
 print(f"\033[97m║\033[100m{' ' * 10}C@nallkun-https://github.com{' ' * 17} \033[0m║")
-print(f"\033[97m║\033[100m{' ' * 10}Z'black-https://ithub.com{' ' *27} \033[0m║")
+print(f"\033[97m║\033[100m{' ' * 10}Z'black-https://ithub.com{' ' *20} \033[0m║")
 print(f"\033[97m║\033[100m{' ' * 10}Black Army Community {' ' *24} \033[0m║")
 print(f"\033[97m╚{'═' * 56}╝")
 while attemps < 100:
