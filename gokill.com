@@ -114,7 +114,7 @@ class ThreadGroupProxyManager:
                             count += 1
             self._initial_proxy_count = count
             if count > 0:
-                logger.info(f"Loaded and parsed {count} {self.proxy_type} proxies from {self.proxy_file}")
+                logger.info(f"\033[36mLoaded and parsed {count} {self.proxy_type} proxies from {self.proxy_file}")
             else:
                 logger.warning(f"No valid proxies found or loaded from {self.proxy_file}")
         except FileNotFoundError:
