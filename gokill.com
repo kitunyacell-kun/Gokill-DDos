@@ -64,7 +64,7 @@ FAIL_SLEEP = 0.5
 
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] (%(threadName)s) %(message)s',
+    format='\033[94m%(asctime)s [%(levelname)s] (%(threadName)s) %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
