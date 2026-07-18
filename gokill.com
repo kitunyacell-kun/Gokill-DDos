@@ -398,8 +398,8 @@ class ThreadedFlooder:
 
     def _signal_handler(self, signum, frame):
         if self.running:
-            sig_name = getattr(signal, f'SIG{signal.Signals(signum).name}', f'Signal {signum}')
-            logger.warning(f"{sig_name} received! Stopping workers and reporter...")
+            sig_name = getattr(signal, f'\033[94mSIG{signal.Signals(signum).name}', f'Signal {signum}')
+            logger.warning(f"\033[94m{sig_name} received! Stopping workers and reporter...")
             self.stop()
     def start(self):
         if self.proxy_manager.proxy_type != 'direct' and self.proxy_manager.get_proxy_count() == 0:
@@ -408,9 +408,9 @@ class ThreadedFlooder:
              else:
                  logger.error("Proxy usage requested but no proxy file or no proxies loaded. Exiting.")
              return
-        logger.info(f"\033[32mStarting {self.num_workers}, workers for {self.target_url}")
-        logger.info(f"\033[32mMethod: {self.http_method}, Proxy Type: {self.proxy_manager.proxy_type or 'direct'}")
-        logger.info(f"\033[32mRequests/Conn: {REQUESTS_PER_CONNECTION}, Connect Timeout: {CONNECT_TIMEOUT}s")
+        logger.info(f"\033[94mStarting {self.num_workers}, workers for {self.target_url}")
+        logger.info(f"\033[94mMethod: {self.http_method}, Proxy Type: {self.proxy_manager.proxy_type or 'direct'}")
+        logger.info(f"\033[94mRequests/Conn: {REQUESTS_PER_CONNECTION}, Connect Timeout: {CONNECT_TIMEOUT}s")
         self.running = True
         self.start_time = time.time()
         signal.signal(signal.SIGINT, self._signal_handler)
@@ -418,7 +418,7 @@ class ThreadedFlooder:
         self.stats_thread = threading.Thread(target=self.stats_reporter, name="StatsReporter", daemon=True)
         self.stats_thread.start()
         futures = [self.executor.submit(self.flood_task) for _ in range(self.num_workers)]
-        logger.info(f"{len(futures)} worker tasks submitted to ThreadPoolExecutor.")
+        logger.info(f"\033[94m{len(futures)} worker tasks submitted to ThreadPoolExecutor.")
         try:
             while self.running:
                 time.sleep(1)
