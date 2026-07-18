@@ -357,7 +357,7 @@ class ThreadedFlooder:
                          sock.close()
 
     def stats_reporter(self) -> None:
-        logger.info("Statistics reporter started.")
+        logger.info("\033[36mStatistics reporter started.")
         last_req_count = 0
         last_time = self.start_time
         while self.running:
