@@ -52,7 +52,7 @@ CONNECT_TIMEOUT = 10
 READ_WRITE_TIMEOUT = 15
 REQUESTS_PER_CONNECTION = 100
 STATS_INTERVAL = 5
-DEFAULT_USER_AGENTS_FILE = 'default/useragents.txt'
+DEFAULT_USER_AGENTS_FILE = '\033[94mdefault/useragents.txt'
 DEFAULT_ACCEPT_HEADERS = [
     "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "application/json, text/javascript, */*; q=0.01",
