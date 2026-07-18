@@ -36,7 +36,7 @@ print(f"\033[97m║\033[100m{' ' * 4}Black Army Community {' ' *30} \033[0m║")
 print(f"\033[97m╚{'═' * 56}╝")
 while attemps < 100:
     print("\033[38;5;6m┏━━KunFayz━━⬣")
-    username = input("\033[38;5;6m┗> Enter Username: \033[33m")
+    username = input("\033[38;5;6m┗> Enter Username: \033[30m")
     password = input("\033[38;5;6m┗> Enter password: \033[30m")
 
     if username == 'go' and password == 'kill':
@@ -196,8 +196,8 @@ def create_connection(target: ParseResult, proxy: Optional[ProxyTuple], proxy_ty
         elif proxy_type in ['http', 'https']:
             sock = socket.create_connection((proxy.host, proxy.port), timeout=CONNECT_TIMEOUT)
             if use_ssl:
-                connect_str = f"CONNECT {target_host}:{target_port} HTTP/1.1\r\n"
-                connect_str += f"Host: {target_host}:{target_port}\r\n\r\n"
+                connect_str = f"\033[36mCONNECT {target_host}:{target_port} HTTP/1.1\r\n"
+                connect_str += f"\033[36mHost: {target_host}:{target_port}\r\n\r\n"
                 sock.sendall(connect_str.encode('utf-8'))
                 sock.settimeout(READ_WRITE_TIMEOUT)
                 response = sock.recv(4096)
